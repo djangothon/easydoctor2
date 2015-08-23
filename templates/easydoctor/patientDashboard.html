@@ -1,0 +1,128 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Easydoctor</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" media="screen">
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+	</head>
+	<body>
+<!-- Header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-toggle"></span>
+      </button>
+      <a class="navbar-brand" href="#">Easydoctor</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+            <i class="glyphicon glyphicon-user"></i> {{ name }} <span class="caret"></span></a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="#">My Profile</a></li>
+            <li><a href="../logout/"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container">
+  
+  <!-- upper section -->
+  <div class="row">
+	<div class="col-sm-3">
+      <!-- left -->
+      <h3><i class="glyphicon glyphicon-briefcase"></i>Patient Control Panel</h3>
+      <hr>
+      
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-link"></i> Dashboard</a></li>
+        <li><a href="../patientProfile/"><i class="glyphicon glyphicon-flash"></i> Profile</a></li>
+        <li><a href="../patientDiagnosis/"><i class="glyphicon glyphicon-list-alt"></i> Diagnosis</a></li>
+        <li><a href="../patientAppointments/"><i class="glyphicon glyphicon-book"></i> Appointments</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
+      </ul>
+      
+      <hr>
+      
+  	</div><!-- /span-3 -->
+    <div class="col-sm-9">
+      	
+      <!-- column 2 -->	
+       <h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>  
+            
+       <hr>
+      
+	   <div class="row">
+            <!-- center left-->	
+
+          <!-- Our Content goes here -->
+            <div class="row">
+              <div class="col-md-4">
+                <img class = "img img-circle" height=150 width=150 src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/10262260_695537770506707_2717332388061299533_n.jpg?oh=b90940b0157cdf554186c40df589c85e&oe=5671FD4A&__gda__=1450030787_52647bf48465a463b6d0562992c3f93e">
+                <br/><br/><br/><br/>
+                <div id = "name" style="font-weight: bold;color : steelblue">{{name}}
+                 </div>
+                 <div>{{gender}}</div>
+                 <div>{{age}} years old</div><br/><br/>
+                 <label for="contact"style="font-weight: bold;color : steelblue">Contact Information</label>
+                 <div>
+                   {{phone}}
+                 </div>
+                 <div>
+                   {{address}}
+                 </div>
+                 
+              </div>
+              <div class="col-md-8">
+                 <img width=600 height=250 src="http://1.bp.blogspot.com/-fIYhlyliYJU/To3ZgD94qvI/AAAAAAAAACY/ZIFn1ykcGpI/s1600/Blood+Sugar.png" /><br/><br/><br/><br/>
+                 <center><b>Blood Pressure Over Time</b></center>
+                 <img width=600 height=250 src="https://lh5.googleusercontent.com/-VnWMglbfEKs/TYaNJss4oXI/AAAAAAAAAaU/Og_TL2BLH2I/s1600/Kock_2011_HRnBP_3.PNG" />
+              </div>
+            </div>
+            <br/><br/>
+            <div class="row">
+              <div class="col-md-4">
+                 
+
+              </div>
+              <div class="col-md-8">
+                 
+              </div>
+            </div>
+
+
+         
+              
+			</div><!--/col-span-6-->
+     
+       </div><!--/row-->
+  	</div><!--/col-span-9-->
+    
+  </div><!--/row-->
+  <!-- /upper section -->
+  
+  
+  
+	<!-- script references -->
+	</body>
+</html>

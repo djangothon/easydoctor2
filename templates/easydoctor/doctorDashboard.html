@@ -1,0 +1,146 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Easydoctor</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" media="screen">
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+	</head>
+	<body>
+<!-- Header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-toggle"></span>
+      </button>
+      <a class="navbar-brand" href="#">Easydoctor</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="glyphicon glyphicon-comment"></i> Messages<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-messages">
+          {% for object in messageList %}
+            <li>
+                <a href="#">
+                    <div>
+                        <strong>{{object.source}}</strong>
+                    </div>
+                    <div>{{object.content}}</div>
+                </a>
+              </li>
+              <li class="divider"></li>
+          {% endfor %}
+            
+        </ul>
+        <!-- /.dropdown-messages -->
+      </li>
+
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+            <i class="glyphicon glyphicon-user"></i> {{ request.session.firstName }} <span class="caret"></span></a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="#">My Profile</a></li>
+            <li><a href="../logout/"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container">
+  
+  <!-- upper section -->
+  <div class="row">
+	<div class="col-sm-3">
+      <!-- left -->
+      <h3><i class="glyphicon glyphicon-briefcase"></i> Doctor Control Panel</h3>
+      <hr>
+      
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-link"></i> Dashboard</a></li>
+        <li><a href="../doctorProfile/"><i class="glyphicon glyphicon-flash"></i> Profile</a></li>
+        <li><a href="../doctorDiagnosis/"><i class="glyphicon glyphicon-list-alt"></i> Diagnosis</a></li>
+        <li><a href="../doctorAppointments/"><i class="glyphicon glyphicon-book"></i> Appointments</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
+      </ul>
+      
+      <hr>
+      
+  	</div><!-- /span-3 -->
+        <div class="col-sm-9">
+        
+      <!-- column 2 --> 
+       <h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>  
+            
+       <hr>
+      
+     <div class="row">
+            <!-- center left--> 
+
+          <!-- Our Content goes here -->
+            <div class="row">
+              <div class="col-md-4">
+                <img class = "img img-circle" height=150 width=150 src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/10262260_695537770506707_2717332388061299533_n.jpg?oh=b90940b0157cdf554186c40df589c85e&oe=5671FD4A&__gda__=1450030787_52647bf48465a463b6d0562992c3f93e">
+                <br/><br/><br/><br/>
+                <div id = "name" style="font-weight: bold;color : steelblue">{{name}}
+                 </div>
+                 <div>{{gender}}</div>
+                 <div>{{age}} years old</div><br/><br/>
+                 <label for="contact"style="font-weight: bold;color : steelblue">Contact Information</label>
+                 <div>
+                   {{phone}}
+                 </div>
+                 <div>
+                   {{address}}
+                 </div>
+                 
+              </div>
+              <div class="col-md-8">
+              </div>
+            </div>
+            <br/><br/>
+            <div class="row">
+              <div class="col-md-4">
+                 
+
+              </div>
+              <div class="col-md-8">
+                 
+              </div>
+            </div>
+
+
+         
+              
+      </div><!--/col-span-6-->
+     
+       </div><!--/row-->
+    </div>
+  </div><!--/row-->
+  <!-- /upper section -->
+  
+
+
+  
+	<!-- script references -->
+	</body>
+</html>
